@@ -37,6 +37,10 @@ public class UsuarioRestController {
         return servicio.findById(id);
     }
     
+    @GetMapping("/{username}/{contra_usu}")
+    public UsuarioEntity getUsuLogin(@PathVariable String username, @PathVariable String contra_usu){
+        return servicio.getUsuLogin(username, contra_usu);
+    }
     
     @PostMapping
     public UsuarioEntity add(@RequestBody UsuarioEntity u){

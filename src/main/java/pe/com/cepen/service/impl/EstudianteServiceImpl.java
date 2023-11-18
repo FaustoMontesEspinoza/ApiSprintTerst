@@ -6,9 +6,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.com.cepen.entity.EstudianteEntity;
-import pe.com.cepen.entity.UsuarioEntity;
 import pe.com.cepen.repository.EstudianteRepository;
-import pe.com.cepen.repository.UsuarioRepository;
 import pe.com.cepen.service.EstudianteService;
 
 
@@ -18,8 +16,6 @@ public class EstudianteServiceImpl implements EstudianteService{
     @Autowired
     private EstudianteRepository repositorio;
     
-    @Autowired
-    private UsuarioRepository usurepositorio;
     
     @Override
     public List<EstudianteEntity> findAll() {

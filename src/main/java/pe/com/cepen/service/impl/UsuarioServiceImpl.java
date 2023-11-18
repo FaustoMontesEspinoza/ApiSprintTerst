@@ -48,5 +48,10 @@ public class UsuarioServiceImpl implements UsuarioService{
         objUsuario.setEsta_usu(false);
         return repositorio.save(objUsuario);
     }
+
+    @Override
+    public UsuarioEntity getUsuLogin(String username, String contra_usu) {
+        return repositorio.getUsuLogin(username, contra_usu);
+    }
     
 }

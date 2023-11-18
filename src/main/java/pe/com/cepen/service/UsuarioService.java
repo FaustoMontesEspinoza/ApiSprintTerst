@@ -9,6 +9,7 @@ public interface UsuarioService {
     List<UsuarioEntity> findAll();
     List<UsuarioEntity> findAllCustom();
     Optional<UsuarioEntity> findById(long id);
+    UsuarioEntity getUsuLogin (String username,String contra_usu);
     UsuarioEntity add(UsuarioEntity u);
     UsuarioEntity update(UsuarioEntity u);
     UsuarioEntity delete(UsuarioEntity u);
