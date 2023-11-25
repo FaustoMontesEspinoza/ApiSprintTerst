@@ -37,6 +37,14 @@ public class EstudianteRestController {
         return servicio.findById(id);
     }
     
+    
+    @GetMapping("usuario/{id}")
+    public EstudianteEntity obtenerEstudianteUsu (@PathVariable Long id){
+        return servicio.obtenerEstudianteUsu(id);
+    }
+    
+    
+    
     @GetMapping("/{id}/{doc_estu}")
     public List<EstudianteEntity> getByEstudianDni(@PathVariable Long id, @PathVariable String doc_estu){
         return servicio.getByEstudianDni(id, doc_estu);

@@ -13,4 +13,5 @@ public interface EstudianteService {
     EstudianteEntity update(EstudianteEntity e);
     EstudianteEntity delete(EstudianteEntity e);
     List<EstudianteEntity> getByEstudianDni(long id, String doc_estu);
+    EstudianteEntity obtenerEstudianteUsu(Long id_usu);
 }

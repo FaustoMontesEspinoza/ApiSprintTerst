@@ -57,5 +57,10 @@ public class EstudianteServiceImpl implements EstudianteService{
     public List<EstudianteEntity> getByEstudianDni(long id, String doc_estu) {
         return repositorio.getByEstudianDni(id, doc_estu);
     }
+
+    @Override
+    public EstudianteEntity obtenerEstudianteUsu(Long id_usu) {
+        return repositorio.obtenerEstudianteUsu(id_usu);
+    }
     
 }
