@@ -36,5 +36,10 @@ public class NotaServiceImpl implements NotaService{
         BeanUtils.copyProperties(n, objNota);
         return repositorio.save(objNota);
     }
+
+    @Override
+    public List<NotaEntity> CursoEstu(Long id_estu) {
+        return repositorio.CursoEstu(id_estu);
+    }
     
 }

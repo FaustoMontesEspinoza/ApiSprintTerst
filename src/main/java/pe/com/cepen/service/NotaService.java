@@ -10,4 +10,5 @@ public interface NotaService {
     Optional<NotaEntity> findById(long id);
     NotaEntity add(NotaEntity n);
     NotaEntity update(NotaEntity n);
+    List<NotaEntity> CursoEstu(Long id_estu);
 }

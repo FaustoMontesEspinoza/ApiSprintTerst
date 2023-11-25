@@ -30,6 +30,11 @@ public class NotaRestController {
         return servicio.findById(id);
     }
     
+    @GetMapping("/estudiante/{id_estu}")
+    public List<NotaEntity> CursoEstu(@PathVariable Long id_estu){
+        return servicio.CursoEstu(id_estu);
+    }
+    
     
     @PostMapping
     public NotaEntity add(@RequestBody NotaEntity n){
@@ -42,5 +47,6 @@ public class NotaRestController {
         n.setId_nota(id);
         return servicio.update(n);
     }
+    
     
 }
