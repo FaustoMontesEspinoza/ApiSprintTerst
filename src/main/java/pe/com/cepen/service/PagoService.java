@@ -12,4 +12,5 @@ public interface PagoService {
     PagoEntity add(PagoEntity pa);
     PagoEntity update(PagoEntity pa);
     PagoEntity delete(PagoEntity pa);
+    List<PagoEntity> findPagoId(long id_matri);
 }

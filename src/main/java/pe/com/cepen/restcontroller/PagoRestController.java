@@ -27,6 +27,11 @@ public class PagoRestController {
     public List<PagoEntity> findAll(){
         return servicio.findAll();
     }
+    
+    @GetMapping("/cuota/{id_matri}")
+    public List<PagoEntity> findPagoId(@PathVariable Long id_matri){
+        return servicio.findPagoId(id_matri);
+    }
 
     @GetMapping("/custom")
     public List<PagoEntity> findAllCustom(){

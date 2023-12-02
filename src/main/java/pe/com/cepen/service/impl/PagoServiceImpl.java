@@ -49,5 +49,10 @@ public class PagoServiceImpl implements PagoService{
         objPago.setEsta_pago(false);
         return repositorio.save(objPago);
     }
+
+    @Override
+    public List<PagoEntity> findPagoId(long id_matri) {
+        return repositorio.findPagoId(id_matri);
+    }
     
 }
