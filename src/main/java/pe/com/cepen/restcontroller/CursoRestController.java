@@ -30,6 +30,11 @@ public class CursoRestController {
         return servicio.findById(id);
     }
     
+     @GetMapping("/carrera/{id_carre}")
+    public List<CursoEntity> findCursoCarrera (@PathVariable Long id_carre){
+        return servicio.findCursoCarrera(id_carre);
+    }
+    
     @PostMapping
     public CursoEntity add(@RequestBody CursoEntity cu){
         return servicio.add(cu);

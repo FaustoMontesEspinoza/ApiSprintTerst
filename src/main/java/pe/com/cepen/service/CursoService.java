@@ -10,4 +10,6 @@ public interface CursoService {
     Optional<CursoEntity> findById(long id);
     CursoEntity add(CursoEntity cu);
     CursoEntity update(CursoEntity cu);
+    
+    List<CursoEntity> findCursoCarrera(long id_estu);
 }
