@@ -11,6 +11,7 @@ public interface MatriculaService {
     List<MatriculaEntity> findAllCustom();
     List<MatriculaEntity> findReporte(Date fecha1,Date fecha2);
     Optional<MatriculaEntity> findById(long id);
+    MatriculaEntity findMatriculaEstu(Long id_estu);
     MatriculaEntity add(MatriculaEntity m);
     MatriculaEntity update(MatriculaEntity m);
     MatriculaEntity delete(MatriculaEntity m);

@@ -55,6 +55,11 @@ public class MatriculaServiceImpl implements MatriculaService{
     public List<MatriculaEntity> findReporte(Date fecha1, Date fecha2) {
         return repositorio.findReporte(fecha1, fecha2);
     }
+
+    @Override
+    public  MatriculaEntity findMatriculaEstu(Long id_estu) {
+        return repositorio.findMatriculaEstu(id_estu);
+    }
     
     
     

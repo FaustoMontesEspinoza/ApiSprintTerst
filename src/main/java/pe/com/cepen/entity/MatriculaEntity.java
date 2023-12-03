@@ -44,7 +44,7 @@ public class MatriculaEntity implements Serializable{
     private boolean esta_matricula;
     
     @ManyToOne
-    @JoinColumn(name="id_estu", nullable = false)
+    @JoinColumn(name="id_estu", nullable = false,referencedColumnName = "id_estu")
     private EstudianteEntity estudiante;
     
     @ManyToOne

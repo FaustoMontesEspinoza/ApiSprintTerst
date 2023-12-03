@@ -15,4 +15,7 @@ public interface MatriculaRepository extends JpaRepository<MatriculaEntity, Long
     @Query("SELECT m FROM MatriculaEntity m "
             + "WHERE m.fecha_matri between :fecha1 AND :fecha2")
     List<MatriculaEntity> findReporte(@Param("fecha1") Date fecha1, @Param("fecha2") Date fecha2);
+    
+    @Query("SELECT m FROM MatriculaEntity m WHERE estudiante.id_estu = :id_estu")
+    MatriculaEntity findMatriculaEstu(@Param("id_estu") Long id_estu);
 }

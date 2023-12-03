@@ -35,6 +35,11 @@ public class MatriculaRestController {
         return servicio.findAllCustom();
     }
     
+    @GetMapping("/estudiante/{id_estu}")
+    public MatriculaEntity findMatriculaEstu(@PathVariable Long id_estu){
+        return servicio.findMatriculaEstu(id_estu);
+    }
+    
     @GetMapping("/{id}")
     public Optional<MatriculaEntity> findById (@PathVariable Long id){
         return servicio.findById(id);
