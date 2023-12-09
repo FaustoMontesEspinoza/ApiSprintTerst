@@ -29,13 +29,13 @@ public class NotaEntity implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id_nota;
     
-    @Column(name="ec1_nota")
+    @Column(name="ec1_nota", nullable = false)
     private double ec1_nota;
     
-    @Column(name="ec2_nota")
+    @Column(name="ec2_nota", nullable = false)
     private double ec2_nota;
     
-    @Column(name="ec3_nota")
+    @Column(name="ec3_nota", nullable = false)
     private double ec3_nota;
     
     @ManyToOne
