@@ -1,8 +1,11 @@
 package pe.com.cepen.restcontroller;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import pe.com.cepen.entity.UsuarioEntity;
 import pe.com.cepen.service.UsuarioService;
 
@@ -43,8 +47,18 @@ public class UsuarioRestController {
     }
     
     @PostMapping
-    public UsuarioEntity add(@RequestBody UsuarioEntity u){
-        return servicio.add(u);
+    public ResponseEntity<UsuarioEntity> add(@RequestBody UsuarioEntity u){
+        UsuarioEntity usuarioCreado = servicio.add(u);
+        
+        if(usuarioCreado != null){
+            URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                    .path("/{id}")
+                    .buildAndExpand(usuarioCreado.getId_usu())
+                    .toUri();
+            return ResponseEntity.created(location).body(usuarioCreado);
+        }else{
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
     
     
